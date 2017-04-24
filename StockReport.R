@@ -1,0 +1,30 @@
+# Stock Dynamics
+
+# Summary Statistics
+ibm = read.csv("IBMStock.csv")
+ge = read.csv("GEStock.csv")
+proctergamble = read.csv("ProcterGambleStock.csv")
+cocacola = read.csv("CocaColaStock.csv")
+boeing = read.csv("BoeingStock.csv")
+ibm$Date = as.Date(ibm$Date, "%m/%d/%y")
+ge$Date = as.Date(ge$Date, "%m/%d/%y")
+proctergamble$Date = as.Date(proctergamble$Date, "%m/%d/%y")
+cocacola$Date = as.Date(cocacola$Date, "%m/%d/%y")
+boeing$Date = as.Date(boeing$Date, "%m,%d/%y")
+summary(ge)
+summary(ibm)
+summary(cocacola)
+summary(boeing)
+sd(proctergamble$StockPrice)
+
+# Visualizing Stock Dynamics
+plot(cocacola$Date, cocacola$StockPrice, type="l", col=red)
+lines(proctergamble$Date, proctergamble$StockPrice, col="blue")
+abline(v=as.Date(c("1983-01-01")), lwd=0.5)
+plot(cocacola$Date[301:432], cocacola$StockPrice[301:432], type="l", col="red", ylim=c(0,210))
+lines(ge$Date[301:432], ge$StockPrice[301:432], col="blue", ylim=c(0,210))
+lines(proctergamble$Date[301:432], proctergamble$StockPrice[301:432], col="purple", ylim=c(0,210))
+lines(boeing$Date[301:432], boeing$StockPrice[301:432], lty=3, col="green", ylim=c(0,210))
+tapply(ibm$StockPrice, months(ibm$Date), mean)
+mean(ibm$StockPrice)
+tapply(cocacola$StockPrice, months(cocacola$Date), mean)

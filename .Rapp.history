@@ -1,0 +1,28 @@
+source("/Users/ive/Dropbox/MITx15.071xTheAnalyticsEdge/WHO.csv")
+read(WHO.csv)
+getwd
+getwd()
+read.csv("WHO.csv")
+ls()
+data = read.csv("WHO.csv")
+summary(data)
+hist(data$CellularSubscribers)
+boxplot(data$LifeExpectancy)
+boxplot(data$LifeExpectancy ~ data$Region)
+boxplot(data$LifeExpectancy ~ data$Region, xlab="", ylab="Life Expectancy", main="Life Expectancy of Countries by Regions")
+table(data$Region)
+tapply(data$Over60, data$Region, mean)
+tapply(data$LiteracyRate, data$Region, min)
+tapply(data$LiteracyRate, data$Region, min, na.rm=true)
+tapply(data$LiteracyRate, data$Region, min, na.rm=TRUE)
+tapply(data$Under15, data$Region, min, na.rm=TRUE)
+tapply(data$Under15, data$Region, mean)
+table(data$Region)#
+tapply(data$Over60, data$Region, mean)
+#Introduction R#
+table(data$Region)#
+tapply(data$Over60, data$Region, mean)
+clear()
+clear
+clean
+clean()
